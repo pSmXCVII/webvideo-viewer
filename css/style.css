@@ -1,0 +1,20 @@
+#button-addon2 {
+  min-width: 60px;
+}
+#end-btn {
+  padding-right: 0;
+  padding-left: 0;
+  --bs-gutter-x: 0;
+  --bs-gutter-y: 0;
+}
+
+.row {
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+}
+
+@media screen and (max-width: 242px) {
+  #button-addon2 {
+    width: 100%;
+  }
+}
