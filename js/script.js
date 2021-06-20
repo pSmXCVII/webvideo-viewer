@@ -9,25 +9,23 @@ function montaHistorico(){
   if(historico){
     const historicoArray = Array.from(historico);
     divHistorico.innerHTML = "<h3>Histórico de acessos</h3>";
-    
-      historicoArray.forEach((i)=>{
-        const data = new Date(i.data);
-        const divItem = document.createElement('div');
-        divItem.classList.add("itemHistorico");
-        divItem.innerHTML = `
-        <div class="card border-success mb-3">
-          <div class="card-body text-success">
-            <p class="card-text">
-            ${i.link}
-            </p>
-          </div>
-          <div class="card-footer text-end bg-transparent border-success">
-            ${data.toLocaleDateString()} às ${data.toLocaleTimeString()}
-          </div>
-        </div>`;
-        divHistorico.appendChild(divItem);
-      });
-    
+    historicoArray.forEach((i)=>{
+      const data = new Date(i.data);
+      const divItem = document.createElement('div');
+      divItem.classList.add("itemHistorico");
+      divItem.innerHTML = `
+      <div class="card border-success mb-3">
+        <div class="card-body text-success">
+          <p class="card-text">
+          ${i.link}
+          </p>
+        </div>
+        <div class="card-footer text-end bg-transparent border-success">
+          ${data.toLocaleDateString()} às ${data.toLocaleTimeString()}
+        </div>
+      </div>`;
+      divHistorico.appendChild(divItem);
+    });
   }
 }
 window.addEventListener('load', montaHistorico);
@@ -51,7 +49,7 @@ function incluiHistorico() {
   } else {
     if(linkInformado){
       const data = Date();
-      const objStorage = {"link":linkInformado, "data": data};
+      const objStorage = [{"link":linkInformado, "data": data}];
       localStorage.setItem('pages', JSON.stringify(objStorage));
       montaHistorico();
       acessarLink(linkInformado);
