@@ -1,4 +1,4 @@
-#button-addon2 {
+#btn-ir {
   min-width: 60px;
 }
 #end-btn {
@@ -14,7 +14,7 @@
 }
 
 @media screen and (max-width: 242px) {
-  #button-addon2 {
+  #btn-ir {
     width: 100%;
   }
 }
