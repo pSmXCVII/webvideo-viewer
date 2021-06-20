@@ -18,3 +18,8 @@
     width: 100%;
   }
 }
+
+#historico span,
+#historico a {
+  display: block;
+}
